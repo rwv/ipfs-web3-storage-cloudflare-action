@@ -8,6 +8,15 @@ inputs:
   web3_token:  # id of input
     description: 'web3.storage API token'
     required: true
+  cloudflare-api-token:
+    description: 'Cloudflare API token'
+    required: true
+  domain:
+    description: 'Domain'
+    required: true
+  zone-id:
+    description: 'Zone ID'
+    required: true
 runs:
   using: "composite"
   steps:
@@ -16,3 +25,10 @@ runs:
       with:
         web3_token: ${{ inputs.web3_token }}
         path_to_add: ${{ inputs.path_to_add }}
+
+    - run: echo "${{ github.action_path }}" >> $GITHUB_PATH
+      shell: bash
+      env:
+        CID: ${{ steps.web3.outputs.cid }}
+        CLOUDFLARE_API_TOKEN: ${{ inputs.cloudflare-api-token }}
+        ZONE_ID: ${{ inputs.zone_id }}
