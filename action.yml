@@ -14,7 +14,7 @@ inputs:
   domain:
     description: 'Domain'
     required: true
-  zone-id:
+  zone_id:
     description: 'Zone ID'
     required: true
 runs:
