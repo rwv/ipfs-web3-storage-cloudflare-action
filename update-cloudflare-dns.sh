@@ -10,6 +10,8 @@ if [[ ${cloudflare_record} == *"\"success\":false"* ]]; then
   exit 0
 fi
 
+echo "Cloudflare record: $cloudflare_record"
+
 cloudflare_record_id=$(echo $cloudflare_record | jq '.result[0].id' | sed 's/"//g')
 
 echo "Cloudflare Record ID: $cloudflare_record_id"
