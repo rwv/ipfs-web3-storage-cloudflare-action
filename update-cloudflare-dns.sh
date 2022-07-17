@@ -1,3 +1,6 @@
+echo "Domain: $DOMAIN"
+echo "Zone ID: $ZONE_ID"
+
 cloudflare_record=$(curl -s -X GET "https://api.cloudflare.com/client/v4/zones/$ZONE_ID/dns_records?type=TXT&name=_dnslink.$DOMAIN" \
   -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \
   -H "Content-Type: application/json")
