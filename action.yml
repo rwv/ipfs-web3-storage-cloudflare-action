@@ -1,4 +1,4 @@
-name: 'Hello World'
+name: 'IPFS Web3.storage Cloudflare Action'
 description: 'Add site to IPFS via web3.storage and set dnslink on Cloudflare'
 inputs:
   path_to_add:  # id of input
