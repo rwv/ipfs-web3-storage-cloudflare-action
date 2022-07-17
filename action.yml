@@ -1,0 +1,18 @@
+name: 'Hello World'
+description: 'Add site to IPFS via web3.storage and set dnslink on Cloudflare'
+inputs:
+  path_to_add:  # id of input
+    description: 'Path to add'
+    required: true
+    default: 'dist'
+  web3_token:  # id of input
+    description: 'web3.storage API token'
+    required: true
+runs:
+  using: "composite"
+  steps:
+    - uses: web3-storage/add-to-web3@v2
+      id: web3
+      with:
+        web3_token: ${{ inputs.web3_token }}
+        path_to_add: ${{ inputs.path_to_add }}
