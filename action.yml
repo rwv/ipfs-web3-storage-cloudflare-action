@@ -32,3 +32,4 @@ runs:
         CID: ${{ steps.web3.outputs.cid }}
         CLOUDFLARE_API_TOKEN: ${{ inputs.cloudflare-api-token }}
         ZONE_ID: ${{ inputs.zone_id }}
+        DOMAIN: ${{ inputs.domain }}
