@@ -26,7 +26,7 @@ runs:
         web3_token: ${{ inputs.web3_token }}
         path_to_add: ${{ inputs.path_to_add }}
 
-    - run: echo "${{ github.action_path }}" >> $GITHUB_PATH
+    - run: ./update-cloudflare-dns.sh
       shell: bash
       env:
         CID: ${{ steps.web3.outputs.cid }}
